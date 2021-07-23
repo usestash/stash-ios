@@ -1,4 +1,4 @@
-    import XCTest
+import XCTest
     @testable import StashAnalytics
 
     final class StashAnalyticsTests: XCTestCase {
