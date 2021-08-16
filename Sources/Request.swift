@@ -9,17 +9,17 @@ import Foundation
 import Combine
 
 class Request: StashAnalyticsRequest {
-    
+
     let urlSession: URLSession
-    
+
     init(urlSession: URLSession) {
         self.urlSession = urlSession
     }
-    
+
     func send(data: Data) -> AnyPublisher<Bool, Error> {
         let request = urlRequest(with: data)
         return urlSession.dataTaskPublisher(for: request)
-            .retry(3)
+            .retry(1)
             .validateStatusCode()
             .tryMap { result -> Bool in
                 let statusCode = (result.response as? HTTPURLResponse)?.statusCode ?? -1
@@ -33,7 +33,7 @@ class Request: StashAnalyticsRequest {
     /// - Returns: An optional `URLRequest`.
     private func urlRequest(with data: Data) -> URLRequest {
         // Create the base URL.
-        let url = url(with: "http://api.localhost:3000")!
+        let url = url(with: "http://api.use:3000")!
         // Create a request with that URL.
         var request = URLRequest(url: url)
 

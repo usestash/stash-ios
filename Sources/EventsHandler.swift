@@ -61,6 +61,7 @@ class EventsHandler {
                             osVersion: osVersion,
                             appVersion: appVersion)
         session.duration = Int(sessionEnd.timeIntervalSince(sessionStart))
+        cache.save(object: session)
     }
 
     func trackScreenView(screenName: String?, screenClass: String? = nil) {

@@ -29,7 +29,7 @@ class Cache<T: Codable> {
             return try? decorder.decode(T.self, from: data)
         }
     }
-    
+
     func removeAll() {
         cache.removeAllObjects()
         keys.removeAll()

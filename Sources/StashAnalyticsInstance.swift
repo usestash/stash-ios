@@ -26,7 +26,7 @@ public class StashAnalyticsInstance {
     private var flusher = Flusher()
     private var requestFlusher: RequestFlusher
     private var persistence: Persistence?
-    
+
     private var persistedProperties: PersistedProperties? {
         get {
             persistence?.properties
@@ -41,17 +41,20 @@ public class StashAnalyticsInstance {
         eventHandler = EventsHandler(cache: cache)
         requestFlusher = RequestFlusher(cache: cache, urlSession: urlSession)
         flusher.delegate = requestFlusher
-        
+
         setupListners()
     }
 
     public func trackScreenView(screenName: String?, screenClass: String? = nil) {
         eventHandler.trackScreenView(screenName: screenName,
                                       screenClass: screenClass)
+        trackActiveUser()
     }
 
-    public func trackActiveUser() {
-        eventHandler.trackActiveUser()
+    private func trackActiveUser() {
+        if wasUserLastActiveToday() {
+            eventHandler.trackActiveUser()
+        }
     }
 
     public func trackAppUpdate() {
@@ -104,7 +107,7 @@ public class StashAnalyticsInstance {
                                        name: UIApplication.willResignActiveNotification,
                                        object: nil)
     }
-    
+
     @objc private func applicationDidBecomeActive(_ notification: Notification) {
         flusher.startTimer()
         eventHandler.startSession()
@@ -118,7 +121,7 @@ public class StashAnalyticsInstance {
         requestFlusher.flush(completion: nil)
         persistence?.save()
     }
-    
+
     private func verifyAppUpdate() {
         guard let storedAppVersion = persistedProperties?.appVersion,
               let currentAppVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {
@@ -130,7 +133,7 @@ public class StashAnalyticsInstance {
             eventHandler.trackAppUpdate()
         }
     }
-    
+
     private func verifyOsUpdate() {
         let currentOsVersion = UIDevice.current.systemVersion
         guard let storedOsVersion = persistedProperties?.osVersion else {
@@ -141,5 +144,20 @@ public class StashAnalyticsInstance {
             persistence?.save()
             eventHandler.trackOsUpdate()
         }
+    }
+
+    private func wasUserLastActiveToday() -> Bool {
+        let today = Date()
+        guard let storedLastActiveDate = persistedProperties?.lastActiveUserDate else {
+            updarteLastActiveUserDate()
+            return false
+        }
+        updarteLastActiveUserDate()
+        return NSCalendar.current.isDate(today, inSameDayAs: storedLastActiveDate)
+    }
+
+    private func updarteLastActiveUserDate() {
+        persistedProperties?.lastActiveUserDate = Date()
+        persistence?.save()
     }
 }
