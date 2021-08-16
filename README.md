@@ -74,7 +74,7 @@ To use StashAnalytics as a [Swift Package Manager](https://swift.org/package-man
 import PackageDescription
 
 let package = Package(
-    name: "HelloStashAnalytics",
+    name: "StashAnalytics",
     dependencies: [
         .Package(url: "https://github.com/usestash/stash-ios.git", "0.0.1")
     ]
