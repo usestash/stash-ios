@@ -20,6 +20,7 @@ Pod::Spec.new do |spec|
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
 
-  spec.source = { :git => "https://github.com/usestash/stash-ios.git", :tag => "#{spec.version}" }
+  spec.source = { :git => "https://github.com/usestash/stash-ios.git", :tag => "v#{spec.version}" }
   spec.source_files = "Sources"
+  spec.swift_versions = ['5.0']
 end
