@@ -33,7 +33,7 @@ class Request: StashAnalyticsRequest {
     /// - Returns: An optional `URLRequest`.
     private func urlRequest(with data: Data) -> URLRequest {
         // Create the base URL.
-        let url = url(with: "http://api.usestash.com")!
+        let url = url(with: "https://api.usestash.com")!
         // Create a request with that URL.
         var request = URLRequest(url: url)
 
