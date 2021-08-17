@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CryptoKit
 #if os(watchOS)
 import WatchKit
 #else
@@ -43,6 +44,15 @@ class EventsHandler {
 
     private var appVersion: String = {
         Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "1.0.0"
+    }()
+    
+    private var userSignature: String = {
+        guard let identifier = UIDevice.current.identifierForVendor?.uuidString,
+              let data = identifier.data(using: .utf8) else {
+            return ""
+        }
+        
+        return Insecure.MD5.hash(data: data).map { String(format: "%02hhx", $0) }.joined()
     }()
 
     init(cache: Cache<Event>) {
@@ -91,7 +101,7 @@ class EventsHandler {
                                osName: osName,
                                osVersion: osVersion,
                                appVersion: appVersion)
-        activeUser.userSignature = UIDevice.current.identifierForVendor?.uuidString
+        activeUser.userSignature = userSignature
         cache.save(object: activeUser)
         firstEventHasOccured = true
     }
