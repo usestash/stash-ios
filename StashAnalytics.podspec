@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "StashAnalytics"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "Stash is a Simple and privacy-focused mobile analytics"
   spec.homepage = "http://usestash.com"
   spec.license = "MIT"

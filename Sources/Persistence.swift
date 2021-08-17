@@ -18,6 +18,8 @@ struct PersistedProperties: Codable {
 class Persistence {
     var properties: PersistedProperties!
     let token: String
+    private let archiveQueue: DispatchQueue = DispatchQueue(label: "com.stashanalytics.persistenceQueue",
+                                                            qos: .utility)
 
     init(token: String) {
         self.token = token
@@ -33,7 +35,9 @@ class Persistence {
     }
 
     public func save() {
-        savePropertiesToFile(properties: properties)
+        archiveQueue.sync {
+            savePropertiesToFile(properties: properties)
+        }
     }
 
     private func savePropertiesToFile(properties: PersistedProperties) {

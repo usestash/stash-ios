@@ -17,16 +17,25 @@ class Flusher {
     weak var delegate: FlusherDelegate?
 
     func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: TimeInterval(interval),
-                                     target: self,
-                                     selector: #selector(self.beginFlush),
-                                     userInfo: nil,
-                                     repeats: true)
+        stopTimer()
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.timer = Timer.scheduledTimer(timeInterval: TimeInterval(self.interval),
+                                              target: self,
+                                              selector: #selector(self.beginFlush),
+                                              userInfo: nil,
+                                              repeats: true)
+        }
     }
 
     func stopTimer() {
         if let timer = timer {
-            timer.invalidate()
+            DispatchQueue.main.async { [weak self, timer] in
+                timer.invalidate()
+                self?.timer = nil
+            }
         }
     }
 
