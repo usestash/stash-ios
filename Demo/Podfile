@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '14.0'
+
+target 'StashAnalyticsDemo (iOS)' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for StashAnalyticsDemo (iOS)
+  pod 'StashAnalytics', :path => '../'
+#  pod 'StashAnalytics'
+
+end
+
+target 'StashAnalyticsDemo (macOS)' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for StashAnalyticsDemo (macOS)
+end

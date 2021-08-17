@@ -1,0 +1,16 @@
+PODS:
+  - StashAnalytics (0.0.2)
+
+DEPENDENCIES:
+  - StashAnalytics (from `../`)
+
+EXTERNAL SOURCES:
+  StashAnalytics:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  StashAnalytics: 28f6e2f4dd8c285af331cc71d20caea28b3daf0c
+
+PODFILE CHECKSUM: 98a6327c099079fd522e3074131aac1eb08f65e4
+
+COCOAPODS: 1.10.2

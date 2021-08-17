@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F0DCCEC37C683F2D2221944 /* Pods_StashAnalyticsDemo__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A78A6C35227B3887E5BBCCE /* Pods_StashAnalyticsDemo__macOS_.framework */; };
+		6F1557A8246FAD3DE8F9B35F /* Pods_StashAnalyticsDemo__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BCC35AD97C5BD71AE9ACB50 /* Pods_StashAnalyticsDemo__iOS_.framework */; };
+		D6090C7726A9726C002DB017 /* PastaDishDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6090C7626A9726C002DB017 /* PastaDishDetail.swift */; };
+		D6090C7826A9726C002DB017 /* PastaDishDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6090C7626A9726C002DB017 /* PastaDishDetail.swift */; };
+		D664FF1E26A49AE800479E58 /* StashAnalyticsDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D664FF0B26A49AE700479E58 /* StashAnalyticsDemoApp.swift */; };
+		D664FF1F26A49AE800479E58 /* StashAnalyticsDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D664FF0B26A49AE700479E58 /* StashAnalyticsDemoApp.swift */; };
+		D664FF2026A49AE800479E58 /* PastaDishesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D664FF0C26A49AE700479E58 /* PastaDishesList.swift */; };
+		D664FF2126A49AE800479E58 /* PastaDishesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D664FF0C26A49AE700479E58 /* PastaDishesList.swift */; };
+		D664FF2226A49AE800479E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D664FF0D26A49AE800479E58 /* Assets.xcassets */; };
+		D664FF2326A49AE800479E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D664FF0D26A49AE800479E58 /* Assets.xcassets */; };
+		D6DF53C826A761BF000B549B /* PastaDish.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF53C726A761BF000B549B /* PastaDish.swift */; };
+		D6DF53C926A761BF000B549B /* PastaDish.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF53C726A761BF000B549B /* PastaDish.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		246554FC5A5982B6C7D74F9D /* Pods-StashAnalyticsDemo (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StashAnalyticsDemo (iOS).release.xcconfig"; path = "Target Support Files/Pods-StashAnalyticsDemo (iOS)/Pods-StashAnalyticsDemo (iOS).release.xcconfig"; sourceTree = "<group>"; };
+		3BCC35AD97C5BD71AE9ACB50 /* Pods_StashAnalyticsDemo__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StashAnalyticsDemo__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A78A6C35227B3887E5BBCCE /* Pods_StashAnalyticsDemo__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StashAnalyticsDemo__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B515FF48E80AE42409014F56 /* Pods-StashAnalyticsDemo (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StashAnalyticsDemo (macOS).debug.xcconfig"; path = "Target Support Files/Pods-StashAnalyticsDemo (macOS)/Pods-StashAnalyticsDemo (macOS).debug.xcconfig"; sourceTree = "<group>"; };
+		CA76893866C03272C485B30D /* Pods-StashAnalyticsDemo (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StashAnalyticsDemo (iOS).debug.xcconfig"; path = "Target Support Files/Pods-StashAnalyticsDemo (iOS)/Pods-StashAnalyticsDemo (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+		D6090C7626A9726C002DB017 /* PastaDishDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastaDishDetail.swift; sourceTree = "<group>"; };
+		D664FF0B26A49AE700479E58 /* StashAnalyticsDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashAnalyticsDemoApp.swift; sourceTree = "<group>"; };
+		D664FF0C26A49AE700479E58 /* PastaDishesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastaDishesList.swift; sourceTree = "<group>"; };
+		D664FF0D26A49AE800479E58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D664FF1226A49AE800479E58 /* StashAnalyticsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StashAnalyticsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D664FF1526A49AE800479E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D664FF1A26A49AE800479E58 /* StashAnalyticsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StashAnalyticsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D664FF1C26A49AE800479E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D664FF1D26A49AE800479E58 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		D6DF53C726A761BF000B549B /* PastaDish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastaDish.swift; sourceTree = "<group>"; };
+		E7CE6108E70637D32889CA58 /* Pods-StashAnalyticsDemo (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StashAnalyticsDemo (macOS).release.xcconfig"; path = "Target Support Files/Pods-StashAnalyticsDemo (macOS)/Pods-StashAnalyticsDemo (macOS).release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D664FF0F26A49AE800479E58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F1557A8246FAD3DE8F9B35F /* Pods_StashAnalyticsDemo__iOS_.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D664FF1726A49AE800479E58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F0DCCEC37C683F2D2221944 /* Pods_StashAnalyticsDemo__macOS_.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9F0F69ACC7F422772CE91F4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BCC35AD97C5BD71AE9ACB50 /* Pods_StashAnalyticsDemo__iOS_.framework */,
+				6A78A6C35227B3887E5BBCCE /* Pods_StashAnalyticsDemo__macOS_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D664FF0526A49AE700479E58 = {
+			isa = PBXGroup;
+			children = (
+				D664FF0A26A49AE700479E58 /* Shared */,
+				D664FF1426A49AE800479E58 /* iOS */,
+				D664FF1B26A49AE800479E58 /* macOS */,
+				D664FF1326A49AE800479E58 /* Products */,
+				DF565BB9D2DE30CA25310D4A /* Pods */,
+				9F0F69ACC7F422772CE91F4C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D664FF0A26A49AE700479E58 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D664FF0B26A49AE700479E58 /* StashAnalyticsDemoApp.swift */,
+				D664FF0C26A49AE700479E58 /* PastaDishesList.swift */,
+				D664FF0D26A49AE800479E58 /* Assets.xcassets */,
+				D6DF53C726A761BF000B549B /* PastaDish.swift */,
+				D6090C7626A9726C002DB017 /* PastaDishDetail.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		D664FF1326A49AE800479E58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D664FF1226A49AE800479E58 /* StashAnalyticsDemo.app */,
+				D664FF1A26A49AE800479E58 /* StashAnalyticsDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D664FF1426A49AE800479E58 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D664FF1526A49AE800479E58 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		D664FF1B26A49AE800479E58 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				D664FF1C26A49AE800479E58 /* Info.plist */,
+				D664FF1D26A49AE800479E58 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		DF565BB9D2DE30CA25310D4A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA76893866C03272C485B30D /* Pods-StashAnalyticsDemo (iOS).debug.xcconfig */,
+				246554FC5A5982B6C7D74F9D /* Pods-StashAnalyticsDemo (iOS).release.xcconfig */,
+				B515FF48E80AE42409014F56 /* Pods-StashAnalyticsDemo (macOS).debug.xcconfig */,
+				E7CE6108E70637D32889CA58 /* Pods-StashAnalyticsDemo (macOS).release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D664FF1126A49AE800479E58 /* StashAnalyticsDemo (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D664FF2626A49AE800479E58 /* Build configuration list for PBXNativeTarget "StashAnalyticsDemo (iOS)" */;
+			buildPhases = (
+				284CABCE83D9C3EFF4CF2D4B /* [CP] Check Pods Manifest.lock */,
+				D664FF0E26A49AE800479E58 /* Sources */,
+				D664FF0F26A49AE800479E58 /* Frameworks */,
+				D664FF1026A49AE800479E58 /* Resources */,
+				C5B8A79E7555F9E8B9E0FFE0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "StashAnalyticsDemo (iOS)";
+			productName = "StashAnalyticsDemo (iOS)";
+			productReference = D664FF1226A49AE800479E58 /* StashAnalyticsDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D664FF1926A49AE800479E58 /* StashAnalyticsDemo (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D664FF2926A49AE800479E58 /* Build configuration list for PBXNativeTarget "StashAnalyticsDemo (macOS)" */;
+			buildPhases = (
+				9BD4729F9790055110FDC511 /* [CP] Check Pods Manifest.lock */,
+				D664FF1626A49AE800479E58 /* Sources */,
+				D664FF1726A49AE800479E58 /* Frameworks */,
+				D664FF1826A49AE800479E58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "StashAnalyticsDemo (macOS)";
+			productName = "StashAnalyticsDemo (macOS)";
+			productReference = D664FF1A26A49AE800479E58 /* StashAnalyticsDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D664FF0626A49AE700479E58 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					D664FF1126A49AE800479E58 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					D664FF1926A49AE800479E58 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = D664FF0926A49AE700479E58 /* Build configuration list for PBXProject "StashAnalyticsDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D664FF0526A49AE700479E58;
+			productRefGroup = D664FF1326A49AE800479E58 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D664FF1126A49AE800479E58 /* StashAnalyticsDemo (iOS) */,
+				D664FF1926A49AE800479E58 /* StashAnalyticsDemo (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D664FF1026A49AE800479E58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D664FF2226A49AE800479E58 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D664FF1826A49AE800479E58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D664FF2326A49AE800479E58 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		284CABCE83D9C3EFF4CF2D4B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StashAnalyticsDemo (iOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BD4729F9790055110FDC511 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StashAnalyticsDemo (macOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5B8A79E7555F9E8B9E0FFE0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StashAnalyticsDemo (iOS)/Pods-StashAnalyticsDemo (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StashAnalyticsDemo (iOS)/Pods-StashAnalyticsDemo (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StashAnalyticsDemo (iOS)/Pods-StashAnalyticsDemo (iOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D664FF0E26A49AE800479E58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6090C7726A9726C002DB017 /* PastaDishDetail.swift in Sources */,
+				D664FF2026A49AE800479E58 /* PastaDishesList.swift in Sources */,
+				D664FF1E26A49AE800479E58 /* StashAnalyticsDemoApp.swift in Sources */,
+				D6DF53C826A761BF000B549B /* PastaDish.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D664FF1626A49AE800479E58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6090C7826A9726C002DB017 /* PastaDishDetail.swift in Sources */,
+				D664FF2126A49AE800479E58 /* PastaDishesList.swift in Sources */,
+				D664FF1F26A49AE800479E58 /* StashAnalyticsDemoApp.swift in Sources */,
+				D6DF53C926A761BF000B549B /* PastaDish.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D664FF2426A49AE800479E58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D664FF2526A49AE800479E58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		D664FF2726A49AE800479E58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA76893866C03272C485B30D /* Pods-StashAnalyticsDemo (iOS).debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RD2SS7229H;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usestash.StashAnalyticsDemo;
+				PRODUCT_NAME = StashAnalyticsDemo;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D664FF2826A49AE800479E58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 246554FC5A5982B6C7D74F9D /* Pods-StashAnalyticsDemo (iOS).release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RD2SS7229H;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usestash.StashAnalyticsDemo;
+				PRODUCT_NAME = StashAnalyticsDemo;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D664FF2A26A49AE800479E58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B515FF48E80AE42409014F56 /* Pods-StashAnalyticsDemo (macOS).debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.usestash.StashAnalyticsDemo;
+				PRODUCT_NAME = StashAnalyticsDemo;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D664FF2B26A49AE800479E58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7CE6108E70637D32889CA58 /* Pods-StashAnalyticsDemo (macOS).release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.usestash.StashAnalyticsDemo;
+				PRODUCT_NAME = StashAnalyticsDemo;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D664FF0926A49AE700479E58 /* Build configuration list for PBXProject "StashAnalyticsDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D664FF2426A49AE800479E58 /* Debug */,
+				D664FF2526A49AE800479E58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D664FF2626A49AE800479E58 /* Build configuration list for PBXNativeTarget "StashAnalyticsDemo (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D664FF2726A49AE800479E58 /* Debug */,
+				D664FF2826A49AE800479E58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D664FF2926A49AE800479E58 /* Build configuration list for PBXNativeTarget "StashAnalyticsDemo (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D664FF2A26A49AE800479E58 /* Debug */,
+				D664FF2B26A49AE800479E58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D664FF0626A49AE700479E58 /* Project object */;
+}

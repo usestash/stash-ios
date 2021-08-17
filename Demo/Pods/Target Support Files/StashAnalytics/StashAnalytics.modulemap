@@ -1,0 +1,6 @@
+framework module StashAnalytics {
+  umbrella header "StashAnalytics-umbrella.h"
+
+  export *
+  module * { export * }
+}
