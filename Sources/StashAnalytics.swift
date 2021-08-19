@@ -14,11 +14,14 @@ public class StashAnalytics {
 
     /// The application identifier
     public var applicationIdentifier: String?
-
+    
+    /// The events handler instance.
     private var eventHandler: EventsHandler
-
+    
+    /// The publicly availabe instance.
     public static let main = StashAnalyticsInstance()
-
+    
+    /// Designated initializer.
     private init() {
         let cache = Cache<Event>()
         eventHandler = EventsHandler(cache: cache)

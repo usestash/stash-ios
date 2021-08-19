@@ -7,11 +7,17 @@
 
 import Foundation
 
+/// Class handling the caching of events.
 class Cache<T: Codable> {
+    /// Underlying cache.
     private let cache = NSCache<NSString, AnyObject>()
+    /// Cached keys.
     private var keys = [String]()
-    private let encoder = JSONEncoder()
-
+    
+    /// Saves an event.
+    /// - Parameters:
+    ///   - object: The event object to save.
+    ///   - encoder: The encoder to be used.
     func save(object: T, encoder: JSONEncoder = JSONEncoder()) {
         let key =  NSUUID.init().uuidString
         guard let data = try? encoder.encode(object) else {
@@ -20,7 +26,10 @@ class Cache<T: Codable> {
         cache.setObject(data as AnyObject, forKey: key as NSString)
         keys.append(key)
     }
-
+    
+    /// Retrieves all the events stored.
+    /// - Parameter decorder: The JSON encoder to be used.
+    /// - Returns: An  array of events.
     func getAll(decorder: JSONDecoder = JSONDecoder()) -> [T] {
         return keys.compactMap { key in
             guard let data = cache.object(forKey: key as NSString) as? Data else {
@@ -29,7 +38,8 @@ class Cache<T: Codable> {
             return try? decorder.decode(T.self, from: data)
         }
     }
-
+    
+    /// Removes all the cached events.
     func removeAll() {
         cache.removeAllObjects()
         keys.removeAll()

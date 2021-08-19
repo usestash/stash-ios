@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Event class.
 internal class Event: Codable {
 
     /// The code identifing the device, for example iPhone7,1

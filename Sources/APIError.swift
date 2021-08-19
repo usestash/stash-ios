@@ -27,6 +27,8 @@ internal enum APIError: Error {
 }
 
 extension APIError: LocalizedError {
+    
+    /// The error description
     public var errorDescription: String? {
         switch self {
         case .encodingError(let errorString):

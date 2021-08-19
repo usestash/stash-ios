@@ -8,14 +8,21 @@
 import Foundation
 import Combine
 
+/// Class handling the API request.
 class Request: StashAnalyticsRequest {
-
+    
+    /// URL Session handling the request.
     let urlSession: URLSession
-
+    
+    /// Designated initializer.
+    /// - Parameter urlSession: The URLSession handling the request.
     init(urlSession: URLSession) {
         self.urlSession = urlSession
     }
-
+    
+    /// Uploads the events to the API.
+    /// - Parameter data: JSON Encoded events.
+    /// - Returns: A publisher with the result of the upload as a bool and an error if it fails.
     func send(data: Data) -> AnyPublisher<Bool, Error> {
         let request = urlRequest(with: data)
         return urlSession.dataTaskPublisher(for: request)
@@ -60,11 +67,13 @@ class Request: StashAnalyticsRequest {
 
         return urlComponents.url
     }
-
+    
+    /// Request headers.
     private var headers: [String: String] {
         return ["Authorization": "Bearer \(apiKey)"]
     }
-
+    
+    /// Request path.
     private var path: String {
         "/v1/applications/\(applicationIdentifier)/events"
     }

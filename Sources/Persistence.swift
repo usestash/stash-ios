@@ -8,19 +8,31 @@
 import Foundation
 import UIKit
 
+/// Global persisted properties.
 struct PersistedProperties: Codable {
+    /// The last known app bundle version.
     var appVersion: String?
+    /// The last known app release short version.
     var appRelease: String?
+    /// The last known OS version.
     var osVersion: String?
+    /// When the user was last active.
     var lastActiveUserDate: Date?
 }
 
 class Persistence {
+    /// The globaly persisted properties.
     var properties: PersistedProperties!
+    
+    /// The API token.
     let token: String
+    
+    /// Queue handling writing to disk.
     private let archiveQueue: DispatchQueue = DispatchQueue(label: "com.stashanalytics.persistenceQueue",
                                                             qos: .utility)
-
+    
+    /// Designated initializer.
+    /// - Parameter token: The API token.
     init(token: String) {
         self.token = token
         if let previouslySavedProperties = loadPropertiesFromFile() {
@@ -33,13 +45,16 @@ class Persistence {
                                                   osVersion: UIDevice.current.systemVersion)
         }
     }
-
+    
+    /// Saves app the global properties to disk.
     public func save() {
         archiveQueue.sync {
             savePropertiesToFile(properties: properties)
         }
     }
-
+    
+    /// Saves the properties to disk.
+    /// - Parameter properties: PersistedProperties value.
     private func savePropertiesToFile(properties: PersistedProperties) {
         guard let path = filePath(with: token) else {
             EventLogger.shared.warning("Could not create file path for archiving")
@@ -56,7 +71,9 @@ class Persistence {
             EventLogger.shared.error("Save to file failed: \(error)")
         }
     }
-
+    
+    /// Loads the persisted properties.
+    /// - Returns: PersistedProperties value.
     private func loadPropertiesFromFile() -> PersistedProperties? {
         guard let path = filePath(with: token) else {
             EventLogger.shared.warning("Could not create archived file path")
@@ -78,7 +95,10 @@ class Persistence {
 
         return properties
     }
-
+    
+    /// Calculates the file path based on the API token.
+    /// - Parameter token: API token.
+    /// - Returns: The path string.
     private func filePath(with token: String) -> String? {
         let fileManager = FileManager.default
         let url = fileManager.urls(for: .libraryDirectory, in: .userDomainMask).last

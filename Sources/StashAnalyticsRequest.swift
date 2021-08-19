@@ -11,7 +11,7 @@ import Combine
 
 /// Protocol describing a request to the StashAnalytics API.
 protocol StashAnalyticsRequest {
-    ///
+    /// Method that handles the upload of data to the API.
     func send(data: Data) -> AnyPublisher<Bool, Error>
     /// The application identifier offered by the service.
     var applicationIdentifier: String { get }
