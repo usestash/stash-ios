@@ -20,7 +20,7 @@ class Flusher {
     private var interval: Int = 30
     /// Delegate handling the event.
     weak var delegate: FlusherDelegate?
-    
+
     /// Start the timer.
     func startTimer() {
         stopTimer()
@@ -35,7 +35,7 @@ class Flusher {
                                               repeats: true)
         }
     }
-    
+
     /// Stop the timer.
     func stopTimer() {
         if let timer = timer {
@@ -45,7 +45,7 @@ class Flusher {
             }
         }
     }
-    
+
     /// Start flushing events.
     @objc private func beginFlush() {
         delegate?.flush(completion: nil)

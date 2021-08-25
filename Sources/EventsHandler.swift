@@ -15,21 +15,21 @@ import UIKit
 
 /// Class handling the creation and caching of events.
 class EventsHandler {
-    
+
     /// Cache storing the events.
     private var cache = Cache<Event>()
-    
+
     /// When the  previous screen view started.
     private var previousScreenViewStartTime: Date?
     /// The previous screen view event.
     private var previousScreenView: Event?
-    
+
     /// Tracks wheter a first event has occured.
     private var firstEventHasOccured = false
-    
+
     /// When the session has started.
     private var sessionStart: Date!
-    
+
     /// The current device code.
     private var deviceCode: String = {
         var systemInfo = utsname()
@@ -42,43 +42,43 @@ class EventsHandler {
         }
         return identifier
     }()
-    
+
     /// The OS name.
     private var osName: String = {
         UIDevice.current.systemName
     }()
-    
+
     /// The OS version
     private var osVersion: String = {
         UIDevice.current.systemVersion
     }()
-    
+
     /// The app version.
     private var appVersion: String = {
         Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "1.0.0"
     }()
-    
+
     /// User signature.
     private var userSignature: String = {
         guard let identifier = UIDevice.current.identifierForVendor?.uuidString,
               let data = identifier.data(using: .utf8) else {
             return ""
         }
-        
+
         return Insecure.MD5.hash(data: data).map { String(format: "%02hhx", $0) }.joined()
     }()
-    
+
     /// Designated initializer.
     /// - Parameter cache: The cache storing the events.
     init(cache: Cache<Event>) {
         self.cache = cache
     }
-    
+
     /// Start the session.
     func startSession() {
         sessionStart = Date()
     }
-    
+
     /// End the session.
     func endSession() {
         let sessionEnd = Date()
@@ -87,10 +87,11 @@ class EventsHandler {
                             osName: osName,
                             osVersion: osVersion,
                             appVersion: appVersion)
+        session.userSignature = userSignature
         session.duration = Int(sessionEnd.timeIntervalSince(sessionStart))
         cache.save(object: session)
     }
-    
+
     /// Track a screen view event.
     /// - Parameters:
     ///   - screenName: The screen name.
@@ -103,6 +104,7 @@ class EventsHandler {
                                appVersion: appVersion)
         screenView.screenName = screenName
         screenView.screenClass = screenClass
+        screenView.userSignature = userSignature
         if let previousStartTime = previousScreenViewStartTime, let lastScreenView = previousScreenView {
             let time = abs(previousStartTime.timeIntervalSinceNow)
             lastScreenView.duration = Int(time)
@@ -112,7 +114,7 @@ class EventsHandler {
         previousScreenView = screenView
         trackActiveUser()
     }
-    
+
     /// Tracks an active user event.
     func trackActiveUser() {
         if firstEventHasOccured {
@@ -127,7 +129,7 @@ class EventsHandler {
         cache.save(object: activeUser)
         firstEventHasOccured = true
     }
-    
+
     /// Tracks an app update event.
     func trackAppUpdate() {
         let appUpdate = Event(type: "app_update",
@@ -135,9 +137,10 @@ class EventsHandler {
                               osName: osName,
                               osVersion: osVersion,
                               appVersion: appVersion)
+        appUpdate.userSignature = userSignature
         cache.save(object: appUpdate)
     }
-    
+
     /// Tracks an os update event.
     func trackOsUpdate() {
         let osUpdate = Event(type: "os_update",
@@ -145,9 +148,10 @@ class EventsHandler {
                              osName: osName,
                              osVersion: osVersion,
                              appVersion: appVersion)
+        osUpdate.userSignature = userSignature
         cache.save(object: osUpdate)
     }
-    
+
     /// Track a custom evetn.
     /// - Parameter type: The custom event type.
     func trackCustomEvent(type: String) {
@@ -156,6 +160,7 @@ class EventsHandler {
                           osName: osName,
                           osVersion: osVersion,
                           appVersion: appVersion)
+        event.userSignature = userSignature
         cache.save(object: event)
         trackActiveUser()
     }
@@ -170,11 +175,12 @@ class EventsHandler {
                                   osName: osName,
                                   osVersion: osVersion,
                                   appVersion: appVersion)
+        inAppPurchase.userSignature = userSignature
         inAppPurchase.value = value
         inAppPurchase.renewal = isRenewal
         cache.save(object: inAppPurchase)
     }
-    
+
     /// Tracks a login event.
     /// - Parameter option: The login option (credential, social, etc.)
     func trackLogin(option: String) {
@@ -183,11 +189,12 @@ class EventsHandler {
                           osName: osName,
                           osVersion: osVersion,
                           appVersion: appVersion)
+        login.userSignature = userSignature
         login.option = option
         cache.save(object: login)
         trackActiveUser()
     }
-    
+
     /// Tracks a signup event.
     /// - Parameter option: The signup option (credential, social, etc.)
     func trackSignup(option: String) {
@@ -196,6 +203,7 @@ class EventsHandler {
                            osName: osName,
                            osVersion: osVersion,
                            appVersion: appVersion)
+        signup.userSignature = userSignature
         signup.option = option
         cache.save(object: signup)
         trackActiveUser()
@@ -208,11 +216,12 @@ class EventsHandler {
                                      osName: osName,
                                      osVersion: osVersion,
                                      appVersion: appVersion)
+        notificationOpen.userSignature = userSignature
         notificationOpen.content = content
         cache.save(object: notificationOpen)
         trackActiveUser()
     }
-    
+
     /// Tracks a content selection event.
     /// - Parameter content: The content selected.
     func trackSelectContent(content: String) {
@@ -221,11 +230,12 @@ class EventsHandler {
                                   osName: osName,
                                   osVersion: osVersion,
                                   appVersion: appVersion)
+        selectContent.userSignature = userSignature
         selectContent.content = content
         cache.save(object: selectContent)
         trackActiveUser()
     }
-    
+
     /// Tracks a share event.
     /// - Parameter content: The content shared.
     func trackShare(content: String) {
@@ -234,6 +244,7 @@ class EventsHandler {
                           osName: osName,
                           osVersion: osVersion,
                           appVersion: appVersion)
+        share.userSignature = userSignature
         share.content = content
         cache.save(object: share)
         trackActiveUser()

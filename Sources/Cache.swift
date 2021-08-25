@@ -13,7 +13,7 @@ class Cache<T: Codable> {
     private let cache = NSCache<NSString, AnyObject>()
     /// Cached keys.
     private var keys = [String]()
-    
+
     /// Saves an event.
     /// - Parameters:
     ///   - object: The event object to save.
@@ -26,7 +26,7 @@ class Cache<T: Codable> {
         cache.setObject(data as AnyObject, forKey: key as NSString)
         keys.append(key)
     }
-    
+
     /// Retrieves all the events stored.
     /// - Parameter decorder: The JSON encoder to be used.
     /// - Returns: An  array of events.
@@ -38,7 +38,7 @@ class Cache<T: Codable> {
             return try? decorder.decode(T.self, from: data)
         }
     }
-    
+
     /// Removes all the cached events.
     func removeAll() {
         cache.removeAllObjects()

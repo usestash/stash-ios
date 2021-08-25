@@ -10,13 +10,13 @@ import os
 
 /// Struct handling the logging of events.
 struct EventLogger {
-    
+
     /// The shared instance.
     static let shared = EventLogger()
-    
+
     /// The logger instance/
     private var logger = Logger(subsystem: "com.stash.analytics", category: "Stash")
-    
+
     /// Logs an info message.
     /// - Parameter message: The message.
     func info(_ message: String) {

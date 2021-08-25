@@ -11,7 +11,7 @@ import Combine
 
 // Extension hadling the API status code response.
 internal extension Publisher where Output == (data: Data, response: URLResponse) {
-    
+
     /// Returns a publisher based on the API response status code.
     /// - Returns: A publisher with the result of the upload as a bool and an error if it fails.
     func validateStatusCode() -> AnyPublisher<Output, APIError> {
@@ -24,7 +24,7 @@ internal extension Publisher where Output == (data: Data, response: URLResponse)
 
     typealias APIRequestResult = (data: Data, response: URLResponse)
     typealias APIRequestPublisher = AnyPublisher<(data: Data, response: URLResponse), APIError>
-    
+
     /// Determines based on the API status code response whether the request failed or succeeded.
     /// - Parameter result: The APIRequestResult.
     /// - Returns: APIRequestPublisher instance.
